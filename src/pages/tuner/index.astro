@@ -20,7 +20,13 @@ const schema = [
 ];
 ---
 
-<TunerLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+<TunerLayout
+  title={project.title}
+  description={project.description}
+  canonical={project.path}
+  keywords="online tuner, guitar tuner, bass tuner, ukulele tuner, violin tuner, chromatic tuner, pitch detection"
+  {schema}
+>
   <TunerHero />
   <TunerVisual />
   <FeatureList />

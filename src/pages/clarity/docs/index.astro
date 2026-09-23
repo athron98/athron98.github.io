@@ -3,21 +3,32 @@ import ClarityLayout from '@layouts/ClarityLayout.astro';
 import DocsNav from '@components/clarity/DocsNav.astro';
 import DocsSidebar from '@components/clarity/DocsSidebar.astro';
 import VersionSelector from '@components/clarity/VersionSelector.astro';
+import { breadcrumbSchema } from '@lib/schema';
+
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Clarity', path: '/clarity/' },
+    { name: 'Documentation', path: '/clarity/docs/' },
+  ]),
+];
 ---
 
 <ClarityLayout
   title="Clarity Documentation - Guides & API Reference"
   description="Clarity framework documentation: getting started guides, configuration, and API reference for components and hooks."
   canonical="/clarity/docs/"
+  keywords="Clarity docs, framework documentation, API reference, getting started"
+  {schema}
 >
   <DocsNav />
   <div class="container flex flex-col gap-10 py-10 lg:flex-row">
     <DocsSidebar />
     <article class="min-w-0 flex-1">
       <div class="flex items-start justify-between gap-4">
-        <div>
-          <h1 class="text-3xl font-bold tracking-tight text-clarity-900">Clarity Documentation</h1>
-          <p class="mt-3 max-w-2xl text-clarity-800/80">
+        <div data-reveal>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Clarity Documentation</h1>
+          <p class="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
             Everything you need to build applications with Clarity: guides, configuration, and API reference.
           </p>
         </div>
@@ -26,31 +37,38 @@ import VersionSelector from '@components/clarity/VersionSelector.astro';
       <div class="mt-8 grid gap-4 sm:grid-cols-2">
         <a
           href="/clarity/docs/getting-started/"
-          class="rounded-xl border border-clarity-100 bg-clarity-50 p-6 transition hover:border-clarity-300"
+          data-reveal
+          class="group rounded-md border border-clarity-100 bg-clarity-50 p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-card-hover dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
         >
-          <h2 class="font-semibold text-clarity-900">Getting Started</h2>
-          <p class="mt-2 text-sm text-clarity-800/80">Install and run your first project in minutes.</p>
+          <h2 class="font-semibold text-gray-900 transition-colors group-hover:text-clarity-600 dark:text-gray-100 dark:group-hover:text-sky-400">Getting Started</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Install and run your first project in minutes.</p>
         </a>
         <a
           href="/clarity/docs/configuration/"
-          class="rounded-xl border border-clarity-100 bg-clarity-50 p-6 transition hover:border-clarity-300"
+          data-reveal
+          style="--reveal-delay: 70ms"
+          class="group rounded-md border border-clarity-100 bg-clarity-50 p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-card-hover dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
         >
-          <h2 class="font-semibold text-clarity-900">Configuration</h2>
-          <p class="mt-2 text-sm text-clarity-800/80">Adapt the framework behavior to your project's needs.</p>
+          <h2 class="font-semibold text-gray-900 transition-colors group-hover:text-clarity-600 dark:text-gray-100 dark:group-hover:text-sky-400">Configuration</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Adapt the framework behavior to your project's needs.</p>
         </a>
         <a
           href="/clarity/docs/api/components/"
-          class="rounded-xl border border-clarity-100 bg-clarity-50 p-6 transition hover:border-clarity-300"
+          data-reveal
+          style="--reveal-delay: 140ms"
+          class="group rounded-md border border-clarity-100 bg-clarity-50 p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-card-hover dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
         >
-          <h2 class="font-semibold text-clarity-900">API: Components</h2>
-          <p class="mt-2 text-sm text-clarity-800/80">Reference for built-in components and their props.</p>
+          <h2 class="font-semibold text-gray-900 transition-colors group-hover:text-clarity-600 dark:text-gray-100 dark:group-hover:text-sky-400">API: Components</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Reference for built-in components and their props.</p>
         </a>
         <a
           href="/clarity/docs/api/hooks/"
-          class="rounded-xl border border-clarity-100 bg-clarity-50 p-6 transition hover:border-clarity-300"
+          data-reveal
+          style="--reveal-delay: 210ms"
+          class="group rounded-md border border-clarity-100 bg-clarity-50 p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-card-hover dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
         >
-          <h2 class="font-semibold text-clarity-900">API: Hooks</h2>
-          <p class="mt-2 text-sm text-clarity-800/80">Hooks for state, routing, and data fetching.</p>
+          <h2 class="font-semibold text-gray-900 transition-colors group-hover:text-clarity-600 dark:text-gray-100 dark:group-hover:text-sky-400">API: Hooks</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Hooks for state, routing, and data fetching.</p>
         </a>
       </div>
     </article>

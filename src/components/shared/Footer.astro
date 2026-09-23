@@ -7,16 +7,16 @@ const offset = Math.floor(Math.random() * rotated.length);
 const ordered = rotated.map((_, i) => rotated[(i + offset) % rotated.length]);
 ---
 
-<footer class="border-t border-gray-200 bg-gray-50">
+<footer class="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900/50">
   <div class="container py-12">
-    <p class="text-sm font-semibold uppercase tracking-wider text-gray-500">Athron98 / BrokenLight Ecosystem</p>
+    <p class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Athron98 / BrokenLight Ecosystem</p>
     <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {
         ordered.map((entry) => (
           <li>
             <a
               href={entry.domain}
-              class="text-sm text-gray-600 underline-offset-2 hover:text-gray-900 hover:underline"
+              class="text-sm text-gray-600 underline-offset-2 transition-colors hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-gray-100"
             >
               {entry.anchorTexts[0]}
             </a>
@@ -24,11 +24,11 @@ const ordered = rotated.map((_, i) => rotated[(i + offset) % rotated.length]);
         ))
       }
     </ul>
-    <div class="mt-8 flex flex-col gap-2 border-t border-gray-200 pt-6 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-8 flex flex-col gap-2 border-t border-gray-200 pt-6 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between dark:border-gray-800 dark:text-gray-400">
       <p>© {new Date().getFullYear()} Athron98 · BrokenLight. Built with Astro.</p>
       <p>
         Maintained at
-        <a href="https://athron98.biz.id" class="underline underline-offset-2 hover:text-gray-900">
+        <a href="https://athron98.biz.id" class="underline underline-offset-2 transition-colors hover:text-gray-900 dark:hover:text-gray-100">
           Athron98 system architecture portal
         </a>
       </p>

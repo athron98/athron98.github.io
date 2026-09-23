@@ -20,7 +20,13 @@ const schema = [
 ];
 ---
 
-<NoboLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+<NoboLayout
+  title={project.title}
+  description={project.description}
+  canonical={project.path}
+  keywords="Nobo, snippet manager, note boards, terminal commands, developer tools, self-hosted"
+  {schema}
+>
   <NoboHero />
   <SnippetPreview />
   <FeatureList />

@@ -4,16 +4,29 @@ import type { EcosystemDomain } from '@lib/types';
 interface Props {
   domain: EcosystemDomain;
   anchorIndex?: number;
+  revealDelay?: number;
 }
 
-const { domain, anchorIndex = 0 } = Astro.props;
+const { domain, anchorIndex = 0, revealDelay = 0 } = Astro.props;
 const anchor = domain.anchorTexts[anchorIndex] ?? domain.anchorTexts[0]!;
 ---
 
 <a
   href={domain.domain}
-  class="group block rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+  data-reveal
+  style={`--reveal-delay: ${revealDelay}ms`}
+  class="group block border border-gray-200 bg-white p-5 shadow-card transition-all duration-200 ease-out hover:-translate-y-1 hover:border-gray-300 hover:shadow-card-hover dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
 >
-  <p class="text-sm font-semibold text-gray-900 group-hover:text-sky-600">{anchor}</p>
-  <p class="mt-1 text-xs text-gray-500">{new URL(domain.domain).hostname}</p>
+  <p class="text-sm font-semibold text-gray-900 transition-colors group-hover:text-sky-600 dark:text-gray-100 dark:group-hover:text-sky-400">
+    {anchor}
+  </p>
+  <p class="mt-1 flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+    {new URL(domain.domain).hostname}
+    <span
+      class="inline-block -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 text-sky-500"
+      aria-hidden="true"
+    >
+      ↗
+    </span>
+  </p>
 </a>

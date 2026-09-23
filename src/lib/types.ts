@@ -37,6 +37,8 @@ export interface SEOProps {
   ogType: 'website' | 'article';
   ogImage: string;
   robots: string;
+  /** Optional comma-separated meta keywords. */
+  keywords?: string;
   /** JSON-LD objects to embed as structured data. */
   schema?: Record<string, unknown>[];
 }

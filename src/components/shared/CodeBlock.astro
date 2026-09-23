@@ -8,7 +8,7 @@ interface Props {
 const { code, lang = 'bash', filename } = Astro.props;
 ---
 
-<figure class="overflow-hidden rounded-xl border border-gray-800 bg-gray-900">
+<figure class="overflow-hidden rounded-md border border-gray-800 bg-gray-900 shadow-card">
   {
     (filename || lang) && (
       <figcaption class="flex items-center justify-between border-b border-gray-800 px-4 py-2 text-xs text-gray-400">

@@ -6,14 +6,15 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  keywords?: string;
   schema?: Record<string, unknown>[];
 }
 
-const { title, description, canonical, schema = [] } = Astro.props;
+const { title, description, canonical, keywords, schema = [] } = Astro.props;
 ---
 
-<BaseLayout {title} {description} {canonical} {schema}>
-  <div class="bg-gradient-to-b from-clarity-50 to-white">
+<BaseLayout {title} {description} {canonical} {keywords} {schema}>
+  <div class="bg-gradient-to-b from-clarity-50 to-white dark:from-gray-900 dark:to-gray-950">
     <slot />
   </div>
 </BaseLayout>

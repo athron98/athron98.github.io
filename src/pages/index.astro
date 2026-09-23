@@ -6,13 +6,14 @@ import ProjectSpotlight from '@components/hub/ProjectSpotlight.astro';
 import StatsSection from '@components/hub/StatsSection.astro';
 import { ECOSYSTEM_DOMAINS } from '@lib/constants';
 import { projectList } from '@lib/projects';
-import { personSchema } from '@lib/schema';
+import { personSchema, websiteSchema } from '@lib/schema';
 
 const schema = [
   personSchema(
     ECOSYSTEM_DOMAINS.map((d) => d.domain),
     ['Web Development', 'DevOps', 'System Architecture', 'Music Production']
   ),
+  websiteSchema(),
 ];
 ---
 
@@ -20,20 +21,23 @@ const schema = [
   title="Athron98 Ecosystem - Project Hub, Tools & Documentation"
   description="The official hub of the Athron98/BrokenLight ecosystem: developer project showcases, digital music tools, and technical documentation for the community."
   canonical="/"
+  keywords="Athron98, BrokenLight, developer tools, music apps, web development, DevOps, snippet manager, guitar tuner"
   {schema}
 >
   <HeroSection />
 
-  <section id="projects" class="bg-white py-16" aria-labelledby="projects-heading">
+  <section id="projects" class="bg-white py-16 dark:bg-gray-950" aria-labelledby="projects-heading">
     <div class="container">
-      <h2 id="projects-heading" class="text-3xl font-bold tracking-tight text-gray-900">
-        Featured projects
-      </h2>
-      <p class="mt-3 max-w-2xl text-gray-600">
-        Tools built from scratch to solve real problems.
-      </p>
+      <div data-reveal>
+        <h2 id="projects-heading" class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          Featured projects
+        </h2>
+        <p class="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
+          Tools built from scratch to solve real problems.
+        </p>
+      </div>
       <div class="mt-8 grid gap-6 md:grid-cols-3">
-        {projectList.map((project) => <ProjectSpotlight project={project} />)}
+        {projectList.map((project, i) => <ProjectSpotlight project={project} revealDelay={i * 80} />)}
       </div>
     </div>
   </section>

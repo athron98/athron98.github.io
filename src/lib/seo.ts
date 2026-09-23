@@ -18,6 +18,7 @@ export function normalizeSeo(props: Partial<SEOProps> & Pick<SEOProps, 'title' |
     ogImage: absoluteUrl(props.ogImage ?? '/assets/hub/og-image.png'),
     robots: props.robots ?? 'index, follow',
     schema: props.schema ?? [],
+    keywords: props.keywords,
   };
 }
 

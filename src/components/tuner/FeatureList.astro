@@ -38,9 +38,13 @@ const { features = [
     <h2 id="tuner-features-heading" class="text-3xl font-bold tracking-tight text-white">Tuner Features</h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
-        features.map((feature) => (
-          <div class="rounded-xl bg-white/10 p-6 ring-1 ring-white/20">
-            <span class="text-2xl" aria-hidden="true">{feature.icon}</span>
+        features.map((feature, i) => (
+          <div
+            data-reveal
+            style={`--reveal-delay: ${i * 70}ms`}
+            class="group rounded-md bg-white/10 p-6 ring-1 ring-white/20 transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg hover:ring-white/30"
+          >
+            <span class="inline-block text-2xl transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-6" aria-hidden="true">{feature.icon}</span>
             <h3 class="mt-3 font-semibold text-white">{feature.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-white/80">{feature.description}</p>
           </div>

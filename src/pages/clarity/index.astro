@@ -19,12 +19,18 @@ const schema = [
 ];
 ---
 
-<ClarityLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+<ClarityLayout
+  title={project.title}
+  description={project.description}
+  canonical={project.path}
+  keywords="Clarity framework, zero-config routing, type-safe API, static site generator, web framework"
+  {schema}
+>
   <ClarityHero />
   <InstallSnippet />
   <FeatureGrid />
-  <section class="bg-clarity-900 py-16 text-center">
-    <div class="container">
+  <section class="bg-clarity-900 py-16 text-center dark:bg-black/40">
+    <div class="container" data-reveal>
       <h2 class="text-3xl font-bold text-white">Ready to try Clarity?</h2>
       <p class="mx-auto mt-3 max-w-xl text-clarity-100/80">
         Comprehensive documentation guides you from installation all the way to production.
@@ -33,7 +39,7 @@ const schema = [
         <Button href="/clarity/docs/" variant="primary" size="lg">Open Documentation</Button>
         <a
           href={project.url}
-          class="inline-flex items-center rounded-lg border border-clarity-300 px-6 py-3 text-base font-semibold text-white hover:bg-white/10"
+          class="inline-flex items-center rounded-md border border-clarity-300 px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10"
         >
           Visit the App
         </a>

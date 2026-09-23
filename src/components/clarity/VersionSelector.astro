@@ -18,14 +18,14 @@ const active = versions.find((v) => v.current) ?? versions[0]!;
 <details class="relative inline-block text-sm">
   <summary
     class={cx(
-      'inline-flex cursor-pointer list-none items-center gap-1 rounded-lg border border-clarity-200 bg-white px-3 py-1.5 font-medium text-clarity-800 hover:border-clarity-300',
+      'inline-flex cursor-pointer list-none items-center gap-1 rounded-md border border-clarity-200 bg-white px-3 py-1.5 font-medium text-clarity-800 transition-colors hover:border-clarity-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-600',
       '[&::-webkit-details-marker]:hidden'
     )}
   >
     {active.label}
     <span aria-hidden="true">▾</span>
   </summary>
-  <ul class="absolute right-0 z-10 mt-1 w-48 overflow-hidden rounded-lg border border-clarity-200 bg-white shadow-lg">
+  <ul class="absolute right-0 z-10 mt-1 w-48 overflow-hidden rounded-md border border-clarity-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-900">
     {
       versions.map((version) => (
         <li>
@@ -34,7 +34,7 @@ const active = versions.find((v) => v.current) ?? versions[0]!;
               {version.label}
             </span>
           ) : (
-            <a href={version.href} class="block px-3 py-2 text-clarity-800 hover:bg-clarity-50">
+            <a href={version.href} class="block px-3 py-2 text-clarity-800 transition-colors hover:bg-clarity-50 dark:text-gray-200 dark:hover:bg-gray-800">
               {version.label}
             </a>
           )}

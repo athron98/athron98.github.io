@@ -8,6 +8,7 @@ interface Props {
   ogType?: 'website' | 'article';
   ogImage?: string;
   robots?: string;
+  keywords?: string;
   schema?: Record<string, unknown>[];
 }
 
@@ -20,6 +21,7 @@ const seo = normalizeSeo({
   ogImage: props.ogImage,
   robots: props.robots,
   schema: props.schema,
+  keywords: props.keywords,
 });
 const schemaObjects = seo.schema ?? [];
 ---
@@ -28,6 +30,14 @@ const schemaObjects = seo.schema ?? [];
 <meta name="description" content={seo.description} />
 <meta name="robots" content={seo.robots} />
 <link rel="canonical" href={seo.canonical} />
+{seo.keywords && <meta name="keywords" content={seo.keywords} />}
+
+<!-- Search Console & site verification -->
+<meta name="google-site-verification" content="s3TPlLK5f1U_KqCgYpKXzmon01qLAF7qphOCFFrtKvg" />
+
+<!-- Performance: faster external resource setup -->
+<meta name="theme-color" content="#0ea5e9" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)" />
 
 <meta property="og:type" content={seo.ogType} />
 <meta property="og:title" content={seo.title} />
