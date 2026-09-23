@@ -1,0 +1,34 @@
+# Athron98 Ecosystem
+
+> Central hub of the Athron98 / BrokenLight ecosystem: project showcases, developer tools, and technical documentation. Maintained by Athron98.
+
+The hub showcases three self-built products and links the wider ecosystem of portals and communities. All content is static HTML generated with Astro — fast, crawlable, and ad-free.
+
+## Projects
+
+- [Clarity](https://athron98.github.io/clarity/): Modern framework for building scalable apps with zero-config routing, type-safe APIs, and blazing-fast static output.
+- [Nobo](https://athron98.github.io/nobo/): Note boards and code snippet manager for developers. Capture terminal commands and snippets, organize boards, retrieve instantly.
+- [Tuner](https://athron98.github.io/tuner/): Digital instrument tuning app with real-time pitch detection, multi-instrument profiles, and cent-level precision.
+
+## Documentation
+
+- [Clarity Docs](https://athron98.github.io/clarity/docs/): Full framework documentation — getting started guide, configuration reference, and API docs for components and hooks.
+- [Getting Started](https://athron98.github.io/clarity/docs/getting-started/): Install Clarity and run a first project within minutes.
+- [Configuration](https://athron98.github.io/clarity/docs/configuration/): Adjust framework behavior through the config file and environment variables.
+- [Components API](https://athron98.github.io/clarity/docs/api/components/): Reference for the built-in Route and ErrorBoundary components.
+- [Hooks API](https://athron98.github.io/clarity/docs/api/hooks/): Reference for useRoute and useFetch hooks.
+
+## Ecosystem
+
+- [Athron98 Portal](https://athron98.biz.id): Tech, DevOps, and system architecture portal.
+- [BrokenLight Business](https://brokenlight.biz.id): Business and digital management portal.
+- [BrokenLight Music](https://brokenlight.web.id): Personal portal for music and creative work.
+- [Gialnur Notes](https://gialnur.web.id): Business insights and personal development notes.
+- [BL8X Links](https://bl8x.my.id): Official link hub and social aggregator.
+- [Berisik Community](https://berisik.my.id): Indie music label and community platform.
+- [Nobo App](https://nobo.bl8x.my.id): Live Nobo application.
+- [Tuner App](https://tuner.brokenlight.biz.id): Live Tuner application.
+
+## Optional
+
+- [Sitemap](https://athron98.github.io/sitemap.xml): Full list of crawlable pages.

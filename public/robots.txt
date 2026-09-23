@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://athron98.github.io/sitemap-index.xml
+Sitemap: https://athron98.github.io/sitemap.xml
+
+# LLM-friendly content index
+# https://athron98.github.io/llms.txt
+# https://athron98.github.io/llms-full.txt

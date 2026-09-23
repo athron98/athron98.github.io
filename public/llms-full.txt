@@ -1,0 +1,102 @@
+# Athron98 Ecosystem
+
+> Central hub of the Athron98 / BrokenLight ecosystem: project showcases, developer tools, and technical documentation. Maintained by Athron98.
+
+The hub at [athron98.github.io](https://athron98.github.io) is the primary entry point for the Athron98 / BrokenLight ecosystem. It showcases three self-built products — Clarity, Nobo, and Tuner — distributes links to related portals and communities, and hosts versioned documentation for the Clarity framework.
+
+Key facts:
+
+- Owner: Athron98 (BrokenLight)
+- Stack: Astro 5 + Tailwind CSS 3, static output, zero client-side framework
+- Deployment: GitHub Pages, built automatically on push to `master`
+- Content language: English
+- Monetization: none — all tools are free and ad-free
+
+## Projects
+
+### Clarity
+
+A modern framework for building scalable applications with zero-config routing, type-safe APIs, and blazing-fast performance. File structure defines routes; schemas and handlers are validated end to end by TypeScript; static output by default with an optimized production runtime.
+
+- Showcase: [https://athron98.github.io/clarity/](https://athron98.github.io/clarity/)
+- Live app: [https://clarity.athron98.biz.id](https://clarity.athron98.biz.id)
+- Open source, MIT-style usage; install with `bun add clarity`
+
+### Nobo
+
+A note boards and code snippet manager for developers. Save terminal commands and code snippets on tidy boards, group them per project or topic, and retrieve them in seconds from the keyboard. Self-hosted: data stays on your own infrastructure, not on third-party clouds.
+
+- Showcase: [https://athron98.github.io/nobo/](https://athron98.github.io/nobo/)
+- Live app: [https://nobo.bl8x.my.id](https://nobo.bl8x.my.id)
+
+Example workflow:
+
+```bash
+nobo add "rsync deploy" "rsync -avz ./dist/ user@host:/var/www/"
+nobo search docker
+nobo get "docker rebuild" | sh
+```
+
+### Tuner
+
+A precise digital tuner for musical instruments. Real-time pitch detection from the device microphone with minimal latency, preset profiles for guitar, bass, ukulele, violin, and other stringed instruments, cent-level deviation display, and a completely ad-free experience.
+
+- Showcase: [https://athron98.github.io/tuner/](https://athron98.github.io/tuner/)
+- Live app: [https://tuner.brokenlight.biz.id](https://tuner.brokenlight.biz.id)
+
+Standard tunings shown on the showcase page:
+
+- Guitar: E2 A2 D3 G3 B3 E4
+- Bass: E1 A1 D2 G2
+- Ukulele: G4 C4 E4 A4
+- Violin: G3 D4 A4 E5
+
+## Documentation
+
+### Getting Started
+
+Install Clarity and run a first project within minutes. One install command (`bun add clarity`), zero configuration. Start the dev server with `bun run dev` and open `http://localhost:4321`.
+
+- URL: [https://athron98.github.io/clarity/docs/getting-started/](https://athron98.github.io/clarity/docs/getting-started/)
+
+### Configuration
+
+Clarity configuration is optional; defaults are production-optimized. Behavior is adjusted through a `clarity.config.ts` file (exporting `defineConfig` with `routes` and `output` options) and environment variables: `CLARITY_ENV` (default `production`, runtime mode) and `CLARITY_PORT` (default `4321`, dev server port).
+
+- URL: [https://athron98.github.io/clarity/docs/configuration/](https://athron98.github.io/clarity/docs/configuration/)
+
+### Components API
+
+Clarity components are pure functions that accept props and return static markup. Documented components:
+
+- `<Route />` — declares a route along with its handler, e.g. `<Route path="/users" handler={listUsers} />`
+- `<ErrorBoundary />` — catches render errors within a specific subtree, with a `fallback` prop
+
+- URL: [https://athron98.github.io/clarity/docs/api/components/](https://athron98.github.io/clarity/docs/api/components/)
+
+### Hooks API
+
+Hooks provide state and side effects in Clarity components. Documented hooks:
+
+- `useRoute()` — returns the active route path and params
+- `useFetch()` — fetch wrapper with automatic caching, returning `data`, `loading`, and `error`
+
+- URL: [https://athron98.github.io/clarity/docs/api/hooks/](https://athron98.github.io/clarity/docs/api/hooks/)
+
+## Ecosystem
+
+Related portals and communities in the Athron98 / BrokenLight ecosystem:
+
+- [Athron98 Portal](https://athron98.biz.id): Tech, DevOps, and system architecture portal.
+- [BrokenLight Business](https://brokenlight.biz.id): Business and digital management portal.
+- [BrokenLight Music](https://brokenlight.web.id): Personal portal for music exploration and personal works.
+- [Gialnur Notes](https://gialnur.web.id): Business insights and personal growth notes.
+- [BL8X Links](https://bl8x.my.id): Official link hub and social aggregator.
+- [Berisik Community](https://berisik.my.id): Indie music label and community platform.
+- [Nobo App](https://nobo.bl8x.my.id): Live Nobo application.
+- [Tuner App](https://tuner.brokenlight.biz.id): Live Tuner application.
+
+## Optional
+
+- [Sitemap](https://athron98.github.io/sitemap.xml): Full list of crawlable pages.
+- [robots.txt](https://athron98.github.io/robots.txt): Crawling rules.
