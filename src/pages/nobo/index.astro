@@ -1,0 +1,29 @@
+---
+import NoboLayout from '@layouts/NoboLayout.astro';
+import NoboHero from '@components/nobo/NoboHero.astro';
+import SnippetPreview from '@components/nobo/SnippetPreview.astro';
+import FeatureList from '@components/nobo/FeatureList.astro';
+import CodeDemo from '@components/nobo/CodeDemo.astro';
+import BashDemo from '@components/nobo/BashDemo.astro';
+import { projects } from '@lib/projects';
+import { applicationSchema } from '@lib/schema';
+
+const project = projects.nobo;
+const schema = [
+  applicationSchema({
+    type: project.schemaType,
+    name: project.name,
+    description: project.description,
+    url: project.path,
+    category: 'DeveloperApplication',
+  }),
+];
+---
+
+<NoboLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+  <NoboHero />
+  <SnippetPreview />
+  <FeatureList />
+  <CodeDemo />
+  <BashDemo />
+</NoboLayout>

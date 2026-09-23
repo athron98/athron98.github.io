@@ -1,0 +1,21 @@
+/* Nobo theme - dark zinc background with amber/teal accents (see AGENTS.md) */
+:root {
+  --nobo-bg-primary: #18181b;
+  --nobo-bg-secondary: #27272a;
+  --nobo-bg-tertiary: #3f3f46;
+  --nobo-text-primary: #fafafa;
+  --nobo-text-secondary: #a1a1aa;
+  --nobo-text-muted: #71717a;
+  --nobo-accent-amber-400: #fbbf24;
+  --nobo-accent-amber-500: #f59e0b;
+  --nobo-accent-teal-400: #2dd4bf;
+  --nobo-accent-teal-500: #14b8a6;
+  --nobo-code-keyword: #c084fc;
+  --nobo-code-string: #86efac;
+  --nobo-code-comment: #71717a;
+  --nobo-code-function: #60a5fa;
+}
+
+/* Usage rules:
+   - Dark background is the default; text must stay high contrast
+   - Amber: primary CTA and highlights; Teal: code syntax and tags */

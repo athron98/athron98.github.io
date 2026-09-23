@@ -1,0 +1,44 @@
+---
+import { normalizeSeo, pageTitle } from '@lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  robots?: string;
+  schema?: Record<string, unknown>[];
+}
+
+const props = Astro.props;
+const seo = normalizeSeo({
+  title: props.title,
+  description: props.description,
+  canonical: props.canonical ?? Astro.url.pathname,
+  ogType: props.ogType,
+  ogImage: props.ogImage,
+  robots: props.robots,
+  schema: props.schema,
+});
+const schemaObjects = seo.schema ?? [];
+---
+
+<title>{pageTitle(seo.title)}</title>
+<meta name="description" content={seo.description} />
+<meta name="robots" content={seo.robots} />
+<link rel="canonical" href={seo.canonical} />
+
+<meta property="og:type" content={seo.ogType} />
+<meta property="og:title" content={seo.title} />
+<meta property="og:description" content={seo.description} />
+<meta property="og:image" content={seo.ogImage} />
+<meta property="og:url" content={seo.canonical} />
+<meta property="og:site_name" content="Athron98 Ecosystem" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={seo.title} />
+<meta name="twitter:description" content={seo.description} />
+<meta name="twitter:image" content={seo.ogImage} />
+
+{schemaObjects.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}

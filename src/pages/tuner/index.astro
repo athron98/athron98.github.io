@@ -1,0 +1,41 @@
+---
+import TunerLayout from '@layouts/TunerLayout.astro';
+import TunerHero from '@components/tuner/TunerHero.astro';
+import TunerVisual from '@components/tuner/TunerVisual.astro';
+import FeatureList from '@components/tuner/FeatureList.astro';
+import InstrumentSelector from '@components/tuner/InstrumentSelector.astro';
+import FrequencyDisplay from '@components/tuner/FrequencyDisplay.astro';
+import { projects } from '@lib/projects';
+import { applicationSchema } from '@lib/schema';
+
+const project = projects.tuner;
+const schema = [
+  applicationSchema({
+    type: project.schemaType,
+    name: project.name,
+    description: project.description,
+    url: project.path,
+    category: 'MusicApplication',
+  }),
+];
+---
+
+<TunerLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+  <TunerHero />
+  <TunerVisual />
+  <FeatureList />
+  <InstrumentSelector />
+  <FrequencyDisplay />
+  <section class="py-16 text-center">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-white">Ready to tune?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-white/80">Open the app and allow microphone access — that's it.</p>
+      <a
+        href={project.url}
+        class="mt-8 inline-flex items-center rounded-lg bg-pink-500 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-pink-400"
+      >
+        Open Tuner →
+      </a>
+    </div>
+  </section>
+</TunerLayout>

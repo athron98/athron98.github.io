@@ -1,0 +1,16 @@
+/* Tuner theme - vibrant purple/pink gradients (see AGENTS.md) */
+:root {
+  --tuner-primary-600: #7c3aed;
+  --tuner-primary-700: #6d28d9;
+  --tuner-primary-800: #5b21b6;
+  --tuner-secondary-400: #f472b6;
+  --tuner-secondary-500: #ec4899;
+  --tuner-accent-white: #ffffff;
+  --tuner-accent-gray-100: #f3f4f6;
+  --tuner-bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Usage rules:
+   - Purple: branding, headers, backgrounds
+   - Pink: CTA buttons and energetic accents
+   - Keep it vibrant and musical; avoid muted tones */

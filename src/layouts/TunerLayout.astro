@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '@styles/tuner.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description, canonical, schema = [] } = Astro.props;
+---
+
+<BaseLayout {title} {description} {canonical} {schema}>
+  <div class="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 text-white">
+    <slot />
+  </div>
+</BaseLayout>

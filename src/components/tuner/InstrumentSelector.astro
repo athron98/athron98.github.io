@@ -1,0 +1,40 @@
+---
+interface Instrument {
+  id: string;
+  name: string;
+  icon: string;
+  strings: string[];
+}
+
+interface Props {
+  instruments?: Instrument[];
+}
+
+const { instruments = [
+  { id: 'guitar', name: 'Guitar', icon: '🎸', strings: ['E₂', 'A₂', 'D₃', 'G₃', 'B₃', 'E₄'] },
+  { id: 'bass', name: 'Bass', icon: '🎻', strings: ['E₁', 'A₁', 'D₂', 'G₂'] },
+  { id: 'ukulele', name: 'Ukulele', icon: '🪕', strings: ['G₄', 'C₄', 'E₄', 'A₄'] },
+  { id: 'violin', name: 'Violin', icon: '🎼', strings: ['G₃', 'D₄', 'A₄', 'E₅'] },
+] } = Astro.props;
+---
+
+<section id="instruments" class="py-16" aria-labelledby="instruments-heading">
+  <div class="container">
+    <h2 id="instruments-heading" class="text-3xl font-bold tracking-tight text-white">Choose your instrument</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        instruments.map((instrument) => (
+          <div class="rounded-xl bg-white/10 p-6 ring-1 ring-white/20">
+            <span class="text-3xl" aria-hidden="true">{instrument.icon}</span>
+            <h3 class="mt-3 font-semibold text-white">{instrument.name}</h3>
+            <ul class="mt-3 flex flex-wrap gap-2" aria-label={`${instrument.name} strings`}>
+              {instrument.strings.map((string) => (
+                <li class="rounded-full bg-white/15 px-2.5 py-0.5 font-mono text-xs text-white">{string}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

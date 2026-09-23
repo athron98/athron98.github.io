@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import { cx } from '@lib/utils';
+
+const docs = (await getCollection('docs')).sort((a, b) => a.data.order - b.data.order);
+const guides = docs.filter((doc) => doc.data.group === 'guide');
+const api = docs.filter((doc) => doc.data.group === 'api');
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const hrefFor = (id: string) => `/clarity/docs/${id}/`;
+const isActive = (id: string) => currentPath === hrefFor(id).replace(/\/$/, '');
+---
+
+<nav class="border-b border-clarity-100 bg-white" aria-label="Clarity documentation navigation">
+  <div class="container flex flex-wrap items-center gap-x-6 gap-y-2 py-3 text-sm">
+    <a href="/clarity/docs/" class={cx('font-semibold', isActive('') ? 'text-clarity-600' : 'text-clarity-900')}>
+      Docs
+    </a>
+    {
+      guides.map((doc) => (
+        <a href={hrefFor(doc.id)} class={cx(isActive(doc.id) ? 'text-clarity-600' : 'text-clarity-800/80 hover:text-clarity-600')}>
+          {doc.data.title}
+        </a>
+      ))
+    }
+    <span class="text-clarity-300" aria-hidden="true">|</span>
+    {
+      api.map((doc) => (
+        <a href={hrefFor(doc.id)} class={cx(isActive(doc.id) ? 'text-clarity-600' : 'text-clarity-800/80 hover:text-clarity-600')}>
+          API: {doc.data.title}
+        </a>
+      ))
+    }
+    <a href="/clarity/" class="ml-auto text-clarity-800/60 hover:text-clarity-600">← Clarity Home</a>
+  </div>
+</nav>

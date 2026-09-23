@@ -1,0 +1,26 @@
+---
+import CodeBlock from '@components/shared/CodeBlock.astro';
+---
+
+<section id="demo" class="bg-[#27272a] py-16" aria-labelledby="demo-heading">
+  <div class="container max-w-3xl">
+    <h2 id="demo-heading" class="text-2xl font-bold text-zinc-50">Everyday workflow</h2>
+    <p class="mt-2 text-sm text-zinc-400">From saving to re-running, all through the terminal.</p>
+    <div class="mt-6 space-y-6">
+      <div>
+        <p class="mb-2 text-sm font-medium text-zinc-300">1. Save a snippet</p>
+        <CodeBlock
+          lang="bash"
+          code={'nobo add "docker rebuild" "docker compose up -d --build"\n'}
+        />
+      </div>
+      <div>
+        <p class="mb-2 text-sm font-medium text-zinc-300">2. Search & re-run</p>
+        <CodeBlock
+          lang="bash"
+          code={'nobo search docker\nnobo get "docker rebuild" | sh\n'}
+        />
+      </div>
+    </div>
+  </div>
+</section>

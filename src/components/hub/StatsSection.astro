@@ -1,0 +1,29 @@
+---
+interface Props {
+  stats?: { value: string; label: string }[];
+}
+
+const { stats = [
+  { value: '3', label: 'Active projects' },
+  { value: '8', label: 'Ecosystem domains' },
+  { value: '100%', label: 'Static & fast' },
+  { value: '95+', label: 'Lighthouse target' },
+] } = Astro.props;
+---
+
+<section class="bg-gray-900 py-14" aria-labelledby="stats-heading">
+  <div class="container">
+    <h2 id="stats-heading" class="sr-only">Ecosystem stats</h2>
+    <dl class="grid grid-cols-2 gap-8 text-center lg:grid-cols-4">
+      {
+        stats.map((stat) => (
+          <div>
+            <dt class="sr-only">{stat.label}</dt>
+            <dd class="text-4xl font-bold text-white">{stat.value}</dd>
+            <dd class="mt-2 text-sm text-gray-400">{stat.label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+/* Clarity theme - sky blue primary + emerald secondary (see AGENTS.md) */
+:root {
+  --clarity-primary-50: #f0f9ff;
+  --clarity-primary-100: #e0f2fe;
+  --clarity-primary-200: #bae6fd;
+  --clarity-primary-300: #7dd3fc;
+  --clarity-primary-400: #38bdf8;
+  --clarity-primary-500: #0ea5e9;
+  --clarity-primary-600: #0284c7;
+  --clarity-primary-700: #0369a1;
+  --clarity-primary-800: #075985;
+  --clarity-primary-900: #0c4a6e;
+  --clarity-secondary-400: #34d399;
+  --clarity-secondary-500: #10b981;
+  --clarity-secondary-600: #059669;
+  --clarity-accent-500: #f43f5e;
+  --clarity-gray-50: #f9fafb;
+  --clarity-gray-100: #f3f4f6;
+  --clarity-gray-900: #111827;
+}
+
+/* Usage rules:
+   - Sky blue: headers, links, icons, hero backgrounds
+   - Emerald: CTA buttons and success states only
+   - Red (--clarity-accent-500): ONLY thin lines <2px, dots <8px, errors, badges */

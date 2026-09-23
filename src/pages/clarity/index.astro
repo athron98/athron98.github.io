@@ -1,0 +1,43 @@
+---
+import ClarityLayout from '@layouts/ClarityLayout.astro';
+import ClarityHero from '@components/clarity/ClarityHero.astro';
+import InstallSnippet from '@components/clarity/InstallSnippet.astro';
+import FeatureGrid from '@components/clarity/FeatureGrid.astro';
+import Button from '@components/shared/Button.astro';
+import { projects } from '@lib/projects';
+import { applicationSchema } from '@lib/schema';
+
+const project = projects.clarity;
+const schema = [
+  applicationSchema({
+    type: project.schemaType,
+    name: project.name,
+    description: project.description,
+    url: project.path,
+    category: 'DeveloperApplication',
+  }),
+];
+---
+
+<ClarityLayout title={project.title} description={project.description} canonical={project.path} {schema}>
+  <ClarityHero />
+  <InstallSnippet />
+  <FeatureGrid />
+  <section class="bg-clarity-900 py-16 text-center">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-white">Ready to try Clarity?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-clarity-100/80">
+        Comprehensive documentation guides you from installation all the way to production.
+      </p>
+      <div class="mt-8 flex justify-center gap-3">
+        <Button href="/clarity/docs/" variant="primary" size="lg">Open Documentation</Button>
+        <a
+          href={project.url}
+          class="inline-flex items-center rounded-lg border border-clarity-300 px-6 py-3 text-base font-semibold text-white hover:bg-white/10"
+        >
+          Visit the App
+        </a>
+      </div>
+    </div>
+  </section>
+</ClarityLayout>

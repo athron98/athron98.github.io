@@ -1,0 +1,41 @@
+---
+import { cx } from '@lib/utils';
+
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  class?: string;
+}
+
+const { variant = 'primary', size = 'md', href, class: className } = Astro.props;
+
+const base =
+  'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
+
+const sizes: Record<string, string> = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-sm',
+  lg: 'px-6 py-3 text-base',
+};
+
+const variants: Record<string, string> = {
+  primary: 'bg-sky-600 text-white hover:bg-sky-700 focus-visible:outline-sky-600',
+  secondary: 'bg-white text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50',
+  ghost: 'text-gray-700 hover:bg-gray-100',
+};
+
+const classes = cx(base, sizes[size], variants[variant], className);
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" class={classes}>
+      <slot />
+    </button>
+  )
+}
